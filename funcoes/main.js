@@ -1,5 +1,6 @@
 function ola() {
     alert("Olá, Mundo! Estou estudando funções.\nIsso é uma função simples, sem parâmetros.")
+    alert("Para ver o resultado de outras funções, vá em Inspecionar Site.")
 }
 
 ola()
