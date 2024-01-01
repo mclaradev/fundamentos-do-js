@@ -25,7 +25,7 @@ dobro()
 // se ele não for informado, o valor padrão será usado no lugar do undefined
 
 function dizerOla(nome = "Mundo") {
-    alert(`O valor de undefined é NaN? hmmm, acabei de resolver isso. veja no código.\nOlá ${nome}!`)
+    console.log(`Olá ${nome}!`)
 }
 
 dizerOla("Galera")
