@@ -40,8 +40,6 @@ function soma(a, b) {
 soma(5, 5)
 soma(10, 40)
 
-alert("Acabamos por aqui. Mas tem uma surpresa se você inspecionar o site.")
-
 // Ao usar vários parâmetros, é recomendado deixar aqueles com valor padrão por último
 
 function criarUsuario(nome, email, senha, tipo = "leitor") {
