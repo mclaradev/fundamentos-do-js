@@ -11,7 +11,7 @@ ola()
 // mas que é informada na hora de chamar a função
 
 function dobro(x) {
-    console.log(`Agora vamos estudar parâmetros.\nVamos começar com um simples exemplo que você vai ver no código.\nO dobro de ${x} é: ${x * 2}`)
+    console.log(`O dobro de ${x} é: ${x * 2}`)
 }
 
 dobro(5)
