@@ -34,7 +34,7 @@ dizerOla()
 // Uma função pode ter quantos parâmetros quisermos, basta separaá-los por vírgula
 
 function soma(a, b) {
-    alert(`Muito estranho não entender oq estou fazendo não é? Veja o código no github e talvez você entenda!\nAgora vamos para uma função com dois parâmetros, um exemplo? uma soma! Veja:\nA soma de ${a} + ${b} é igual a: ${a + b}`)
+    console.log(`A soma de ${a} + ${b} é igual a: ${a + b}`)
 }
 
 soma(5, 5)
