@@ -32,12 +32,48 @@ console.log(produtos("notebook acer aspire intel core i3", 2600))
 
 // E o retorno não precisa ser uma variável,
 // pode ser o resultado de qualquer expressão
+
 function areaRetangular(base, altura) {
     return base * altura
-  }
-  console.log(areaRetangular(3, 5))
-  // Ou até o retorno de outra função
-  function areaQuadrada(lado) {
+}
+console.log(areaRetangular(3, 5))
+// Ou até o retorno de outra função
+function areaQuadrada(lado) {
     return areaRetangular(lado, lado)
-  }
-  console.log(areaQuadrada(8))
+}
+console.log(areaQuadrada(8))
+
+// Uma função só pode ter uma saída, depois do return nada é executado
+// Repare que o VS Code nos avisa que nosso código não será executado
+
+function olaMundo() {
+    let texto = "..."
+    return texto
+    texto = "Olá, Mundo!"
+    console.log(texto)
+}
+
+console.log(olaMundo())
+
+// o certo seria:
+
+// function olaMundo() {
+//    let texto = "..."
+//    texto = "Olá, Mundo!"
+//    console.log(texto)
+//    return texto
+// }
+
+// No entanto, diferentes ramificações dentro
+// da função podem ter diferentes retornos
+
+function maioridade(idade) {
+    if (idade >= 18) {
+        return `você tem ${idade} anos de idade, ou seja, você é maior de idade`
+    } else {
+        return `você tem ${idade} anos de idade, ou seja, você é menor de idade`
+    }
+}
+
+console.log(maioridade(29))
+console.log(maioridade(12))
