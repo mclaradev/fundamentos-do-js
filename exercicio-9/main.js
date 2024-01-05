@@ -1,43 +1,32 @@
 function areaTriangulo() {
     const base = parseFloat(prompt("Digite o número da base:"))
     const altura = parseFloat(prompt("Digite o número da altura:"))
-    const resultado = base * altura / 2
-    alert(`A área do Triângulo é igual a: ${resultado}`)
+    return base * altura / 2
 }
-
-areaTriangulo()
 
 function areaRetangulo() {
     const base = parseFloat(prompt("Digite o número da base:"))
     const altura = parseFloat(prompt("Digite o número da altura:"))
-    const resultado = base * altura
-    alert(`A área do Retângulo é igual a: ${resultado}`)
+    return base * altura
 }
-
-areaRetangulo()
 
 function areaQuadrado() {
     const lado = parseFloat(prompt("Digite o número do lado:"))
-    const resultado = lado ** 2
-    alert(`A área do Quadrado é igual a: ${resultado}`)
+    return lado ** 2
 }
-
-areaQuadrado()
 
 function areaTrapezio() {
     const baseMaior = parseFloat(prompt("DIgite o número da base maior:"))
     const baseMenor = parseFloat(prompt("Digite o número da base menor:"))
     const altura = parseFloat(prompt("Digite o número da altura:"))
-    const resultado = (baseMaior + baseMenor) * altura / 2
-    alert(`A área do Trapézio é igual a: ${resultado}`)
+    return (baseMaior + baseMenor) * altura / 2
 }
-
-areaTrapezio()
 
 function areaCirculo() {
     const raio = parseFloat(prompt("Digite o número do raio:"))
-    const resultado = 3.14 * (raio ** 2)
-    alert(`A área do Círculo é igual a: ${resultado}`)
+    return 3.14 * (raio ** 2)
 }
 
-areaCirculo()
+function menu() {
+    return prompt("Bem vind@ a calculadora geométrica. Escolha uma das opções abaixo para começarmos:\n1. Área do Triângulo\n2. Área do Retângulo\n3. Área do Quadrado\n4. Área do Trapézio\n5. Área do Círculo\n6. Sair")
+}
