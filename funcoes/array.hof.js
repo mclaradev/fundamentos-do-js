@@ -48,3 +48,34 @@ const orcs = personagens.filter(function (personagem) {
 
 console.log(orcs)
 
+// reduce: serve para reduzir um array existente a um valor final qualquer,
+// passando um valor entre cada iteração sobre esse array e retornando ele no final
+// tradicional:
+
+// let nivelTotal = 0
+// for (let i = 0; i < personagens.length; i++) {
+//   nivelTotal += personagens[i].nivel
+// }
+// 
+// console.log(nivelTotal)
+
+// funcional:
+
+const nivelTotal = personagens.reduce(function (acumulador, personagem) {
+    return acumulador + personagem.nivel
+}, 0)
+
+console.log(nivelTotal)
+
+// outro exemplo:
+
+const racas = personagens.reduce(function (acumulador, personagem) {
+    if (acumulador[personagem.raca]) {
+      acumulador[personagem.raca].push(personagem)
+    } else {
+      acumulador[personagem.raca] = [personagem]
+    }
+    return acumulador
+}, {})
+
+console.log(racas)
