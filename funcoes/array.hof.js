@@ -39,3 +39,12 @@ console.log(nomes)
 // }
 // 
 // console.log(orcs)
+
+// funcional
+
+const orcs = personagens.filter(function (personagem) {
+    return personagem.raca === "Orc"
+})
+
+console.log(orcs)
+
