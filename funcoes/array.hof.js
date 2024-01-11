@@ -8,7 +8,7 @@ const personagens = [
     { nivel: 29, nome: "Muradin", raca: "Anão", classe: "Guerreiro" },
 ]
 
-// Map: permite obter um novo array a partir de um array existenste
+// Map: permite obter um novo array a partir de um array existente
 // tradicional:
 
 // const nomes = []
