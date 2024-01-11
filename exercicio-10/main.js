@@ -32,3 +32,6 @@ function criarVagas () {
     }
 }
 
+function visualizarVagas() {
+    listarVagas()
+}
