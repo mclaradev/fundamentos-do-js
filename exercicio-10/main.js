@@ -1,6 +1,6 @@
 let vaga = []
 
-function listarVagas () {
+function listarVagas() {
     alert("Lista de vagas disponíveis:\nÍndice\tNome da vaga\tQuantidade de Inscritos")
 
     vagas.forEach(function (vaga, indice) {
@@ -8,9 +8,9 @@ function listarVagas () {
     })
 }
 
-function criarVagas () {
+function criarVagas() {
     let nome = prompt("Digite o nome da vaga:")
-    let descricao =  prompt("Digite a descrição da vaga:")
+    let descricao = prompt("Digite a descrição da vaga:")
     let dataLimite = prompt("Digite a data limite:")
 
     alert(`Confirme as informações:\nNome: ${nome}\nDescrição: ${descricao}\nData Limite: ${dataLimite}`)
@@ -76,5 +76,30 @@ function inscreverCandidato() {
         alert("Candidato inscrito com sucesso!")
     } else {
         alert("Inscrição cancelada.")
+    }
+}
+
+function excluirVaga() {
+    listarVagas()
+
+    let indiceVaga = parseInt(prompt("Digite o índice da vaga que deseja excluir:"))
+
+    if (isNaN(indiceVaga) || indiceVaga < 0 || indiceVaga >= vagas.length) {
+        alert("Índice inválido.")
+    }
+
+    let vaga = vagas[indiceVaga]
+    alert(`Informações da vaga:\nÍndice: ${indiceVaga}\nNome:
+${vaga.nome}\nDescrição: ${vaga.descricao}\nData Limite: 
+${vaga.dataLimite}\nQuantidade de Candidatos: 
+${vaga.candidatos.length}`)
+
+    let confirmacao = prompt("Deseja confirmar a exclusão da vaga? (Digite 'sim' para confirmar.)")
+
+    if (confirmacao.toLowerCase() === 'sim') {
+        vagas.splice(indiceVaga, 1)
+        alert("Vaga Excluída com sucesso!")
+    } else {
+        alert("Exclusão da vaga cancelada.")
     }
 }
