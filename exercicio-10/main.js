@@ -53,3 +53,28 @@ function visualizarVagas() {
     alert("")
 }
 
+function inscreverCandidato() {
+    listarVagas()
+
+    let indiceVaga = parseInt(prompt("Digie o índice da vaga em que deseja inscrever o candidato:"))
+
+    if (isNaN(indiceVaga) || indiceVaga < 0 || indiceVaga >= vagas.length) {
+        alert("Índice inválido.")
+    }
+
+    let vaga = vagas[indiceVaga]
+    alert(`Informações da vaga:\nÍndice: ${indiceVaga}\nNome: ${vaga.nome}\nDescrição: ${vaga.descricao}\nData Limite: ${vaga.dataLimite}`)
+
+    let nomeCandidato = prompt("Digite o nome do candidato:")
+
+    alert(`Confirma as informações:\nVaga: ${vaga.nome}\nCandidato: ${nomeCandidato}`)
+
+    let confirmacao = prompt("Deseja confirmar a inscrição do candidato? (Digite 'sim' para confirmar.)")
+
+    if (confirmacao.toLowerCase() === 'sim') {
+        vaga.candidatos.push(nomeCandidato)
+        alert("Candidato inscrito com sucesso!")
+    } else {
+        alert("Inscrição cancelada.")
+    }
+}
