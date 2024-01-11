@@ -34,4 +34,22 @@ function criarVagas () {
 
 function visualizarVagas() {
     listarVagas()
+
+    let indiceVaga = parseInt(prompt("Digite o índice da vaga que deseja visualizar:"))
+
+    if (isNaN(indiceVaga) || indiceVaga < 0 || indiceVaga >= vagas.length) {
+        alert("Índice inválido.")
+    }
+
+    let vaga = vagas[indiceVaga]
+    alert(`Informações da vaga:\nÍndice: ${indiceVaga}\nNome: ${vaga.nome}\nDescrição: ${vaga.descricao}\nData Limite: ${vaga.dataLimite}\nQuantidade de Candidatos: ${vaga.candidatos.length}`)
+
+    if (vaga.candidatos.length > 0) {
+        vaga.candidatos.forEach(function (candidato, index) {
+            alert(`Candidatos Inscritos: ${index + 1}. ${candidato}`)
+        })
+    }
+
+    alert("")
 }
+
