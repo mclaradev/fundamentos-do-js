@@ -1,7 +1,13 @@
+// como eu fiz:
+
 function limparForm() {
     document.getElementById('position').value = ''
     document.getElementById('playerName').value = ''
     document.getElementById('playerNumber').value = ''
+}
+
+function limparFormDelete() {
+    document.getElementById('removePlayer').value = ''
 }
 
 function escalarPlayer() {
@@ -9,13 +15,26 @@ function escalarPlayer() {
     const playerName = document.getElementById('playerName').value
     const playerNumber = document.getElementById('playerNumber').value
 
-    if (position && playerName && playerNumber) {
-        let confirmacao = confirm(`Deseja confirmar a escalção do jogador ${playerName} de camisa número ${playerNumber}?`)
-        if (confirmacao) {
-            const newLi = document.createElement('li')
-            newLi.innerText = `Jogador: ${playerName} | Camisa: ${playerNumber} | Posição: ${position}`
-            document.getElementById('escalacaoList').appendChild(newLi)
-            limparForm()
-        }
+    const confirmacao = confirm(`Deseja confirmar a escalação do jogador ${playerName} de camisa número ${playerNumber} como ${position}?`)
+
+    if (confirmacao) {
+        const ul = document.getElementById('escalacaoList')
+        const li = document.createElement('li')
+        li.id = `player-${playerNumber}`
+        li.innerHTML = `<strong>Jogador: ${playerName}<br>Posição: ${position}<br>Número da camisa: ${playerNumber}`
+        ul.appendChild(li)
+        limparForm()
+    }
+}
+
+function removerPlayer() {
+    const removePlayer = document.getElementById('removePlayer').value
+    const playerToRemove = document.getElementById(`player-${removePlayer}`)
+
+    const confirmacao = confirm(`Deseja remover o jogador de camisa número ${removePlayer}?`)
+    
+    if (confirmacao) {
+        document.getElementById('escalacaoList').removeChild(playerToRemove)
+        limparFormDelete()
     }
 }
