@@ -18,5 +18,5 @@ button.addEventListener('click', register)
 
 function removerEvento() {
     button.removeEventListener('click', register)
-    alert(`Usuário ${username} removido.`)
+    alert(`Usuário removido.`)
 }
