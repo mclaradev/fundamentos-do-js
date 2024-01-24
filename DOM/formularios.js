@@ -11,7 +11,7 @@ form.addEventListener('submit', function (ev) {
 
     let salad = ''
     document.querySelectorAll('input[name="salad"]:checked').forEach(function (item) {
-        salad += `- ${item.value}\n`
+        salad += `${item.value}\n`
     })
 
     console.log({
@@ -26,7 +26,7 @@ form.addEventListener('submit', function (ev) {
     alert(`
     Pedido Realizado! Confirme os dados abaixo:\n
     Cliente: ${name}\n
-    Pedido: ${breadType}, ${main} e ${salad}\n
+    Pedido: ${breadType}, ${main} e\n${salad}
     Obsarvação: ${observations}
-    Endereço: ${adress}`)
+    Endereço: ${adress}`) 
 })
