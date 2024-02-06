@@ -18,9 +18,9 @@ function initializeGame() {
     'Vez de: <span id="turnPlayer"></span>';
   updateTitle();
   boardRegions.forEach(function (elemet) {
-    elemet.classList.remove("win");
+    elemet.classList.remove('win');
     elemet.innerText = "";
-    elemet.addEventListener("click", handBoardClick);
+    elemet.addEventListener('click', handBoardClick);
   });
 }
 
@@ -78,13 +78,13 @@ function getWinRegions() {
 }
 
 function disableRegion(element) {
-  element.style.cursor = "default";
-  element.removeEventListener("click", handBoardClick);
+  element.classList.remove('cursor-pointer')
+  element.removeEventListener('click', handBoardClick);
 }
 
 function handleWin(regions) {
     regions.forEach(function (region) {
-        document.querySelector(`[data-region=" ${region} "]`).classList.add('win')
+        document.querySelector(`[data-region="' ${region} '"]`).classList.add('win')
     })
     const playerName = document.getElementById(turnPlayer).value
     document.querySelector('h2').innerHTML = `${playerName} ganhou.`
@@ -119,4 +119,4 @@ function handBoardClick(ev) {
   }
 }
 
-document.getElementById("start").addEventListener("click", initializeGame);
+document.getElementById('start').addEventListener('click', initializeGame);
