@@ -3,3 +3,8 @@ document.getElementById('sessionBtn').addEventListener('click', function () {
     sessionStorage.setItem('info', input.value)
     input.value = ''
 })
+
+document.getElementById('readSession').addEventListener('click', function() {
+    const info = sessionStorage.getItem('info')
+    alert(`A informação salva é: "${info}".`)
+})
