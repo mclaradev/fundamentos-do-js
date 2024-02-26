@@ -19,3 +19,13 @@ document.getElementById('readLocal').addEventListener('click', function() {
     const t = localStorage.getItem('text')
     alert(`A informação salva é: "${t}".`)
 })
+
+document.getElementById('cookieBtn2').addEventListener('click', function() {
+    const input = document.getElementById('cookie2')
+    const cookie = `text= ${input.value};`
+    const expiration = `expires= ${new Date(2024, 1, 28)};`
+    const path = 'path=/;'
+    document.cookie = cookie + expiration + path
+    input.value = ''
+    console.log(document.cookie)
+})
